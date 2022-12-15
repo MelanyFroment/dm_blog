@@ -1,5 +1,6 @@
 <?php
 namespace model;
+use model\Billets;
 use model\Commentaire;
 
 class CommentairesManager extends Manager
@@ -47,26 +48,24 @@ class CommentairesManager extends Manager
             'id' => $this->manager->db->lastInsertId()
         ]);
         return $commentaire; 
-    } 
+    }
 
-    // public function create(Commentaires $idBillet)
-    // {
-    //   $q = $this->manager
-    //       ->db
-    //       ->prepare('INSERT INTO commentaires (id_billet,auteur,contenu,date_commentaire) VALUES (:id_billet, :auteur, :contenu, :date_commentaire)');
-    //       $q->bindValue(':id_billet', $idBillet->getIdBillet());
-
-    //   $q->execute( [
-    //       ':auteur'  => $idBillet->getAuteur(), 
-    //       ':contenu'  => $idBillet->getContenu(), 
-    //       ':date_commentaire'  => $idBillet->getDateCommentaire(), 
-    //       ':id'   => $idBillet->getIdBillet()
-    //   ]);
-    //   $idBillet->hydrate([
-    //     'id' => $this->manager
-    //                   ->db
-    //                   ->lastInsertId(),
-    //   ]);  
-    // }
-    
+    public function addBillet( $billet )
+    {
+        // echo 'toto';
+        // exit();
+        $q = $this->manager 
+            ->db    
+                ->prepare('INSERT INTO billets (titre,contenu,date_creation) VALUES (:titre, :contenu, :date_creation, NOW())'); // Fonction PDO = prepare('') // Ne pas mettre les valeur direct ppour une meilleur securité // On enregistre ne bdd
+        $q->execute([
+            ':titre' => $billet->getTitre(),
+            ':contenu' => $billet->getContenu(),
+            ':date_creation' => $billet->getDateCreation(),
+        ]);  
+        
+        $billet->hydrate([ // On recupere l'Id gracee a la fonction hydrate pour recupere les champs
+            'id' => $this->manager->db->lastInsertId()
+        ]);
+        return $billet; 
+    }
 }

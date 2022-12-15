@@ -46,11 +46,36 @@ require 'header.php';
                             ?>
                     </div>
                 </div>
+                <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Ajouter un commentaire
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="accordion-body">
+                                    <form action="">
+                                        <?php $currentDate= date('mm "/" dd "/" y');?>
+                                        <input type="hidden" class="form-control" value="<?=$currentDate?>" name="date_commentaire" id="">
+                                        <input type="hidden" class="form-control" value="<?=$billet['id'];?>" name="id_billet" id="idBillet">
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Titre</label>
+                                            <input type="text" id="auteur" class="form-control" name="auteur" placeholder="Titre">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Contenu</label>
+                                            <textarea class="form-control" id="contenu" name="contenu" placeholder="Contenu" rows="3"></textarea>
+                                        </div>
+                                        <input type="button" name="ok" id="ok" value="Envoyer">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
-
         </div>
-
-
     </section>
 
 <?php

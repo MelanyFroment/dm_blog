@@ -1,6 +1,7 @@
 <?php
     require 'header.php';
 ?>
+
 <section class="row justify-content-center">
     <div class="col-12">
         <h1>Mon blog !</h1>
@@ -10,7 +11,7 @@
                     <p>Derniers billets du blog :</p>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" id="result">
                 <div class="col-9">
                     <?php
                     foreach( $listBillets as $billet ) {
@@ -28,9 +29,47 @@
                         </div>
     
                     <?php
-                    } // Fin de la boucle des billets
+                    }
 
                     ?>
+
+                </div>
+                <div class="col-9" id="result">
+
+                </div>
+            </div>
+
+   
+           
+            <div class="row justify-content-center">
+                <div class="col-9">
+                    <!-- <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Ajouter un commentaire
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="accordion-body">
+                                    <form action="">
+                                        <input type="hidden" class="form-control" name="date_commentaire" id="">
+                                        <input type="hidden" class="form-control" name="idBillet" id="idBillet">
+
+                                        <div class="mb-3">
+                                            <label class="form-label">Titre</label>
+                                            <input type="text" id="auteur" class="form-control" name="auteur" placeholder="Titre">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Contenu</label>
+                                            <textarea class="form-control" id="contenu" name="contenu" placeholder="Contenu" rows="3"></textarea>
+                                        </div>
+                                        <input type="button" name="ok" id="ok" value="Envoyer">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>

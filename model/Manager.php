@@ -5,9 +5,9 @@ use classes\dbConnect;
 
 class Manager
 {
-    private $_dsn           = 'mysql:host=localhost;dbname=dm_blog';
-    private $_login         = 'root';
-    private $_password      = '';
+    private $_dsn           = 'mysql:host=localhost;dbname=melany';
+    private $_login         = 'melany';
+    private $_password      = '3ceVFyXEe';
 
 
     /**

@@ -2,25 +2,6 @@ h1
 {
     text-align:center;
 }
-
-.news p
-{
-    background-color:#CCCCCC;
-    margin-top:0px;
-}
-.news
-{
-    width:70%;
-    margin:auto;
-}
-
-a
-{
-    text-decoration: none;
-    background-color: #000000!important;
-    color: #fff!important; 
-}
-
 .bg-light {
     background-color: #49a59d73!important;
 }
@@ -62,4 +43,14 @@ h3{
     border-color: #add6d3;
     width: 100%;
     font-weight: 800;
+}
+.accordion-button:focus {
+    color: #ffffff!important;
+    background-color: #add6d3d6!important;
+    box-shadow: inset 0 -1px 0 rgb(186 221 218)!important; 
+} 
+.accordion-button:not(.collapsed) {
+    color: #ffffff!important;
+    background-color: #add6d3d6!important;
+    box-shadow: inset 0 -1px 0 rgb(186 221 218)!important; 
 }
